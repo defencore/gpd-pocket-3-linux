@@ -8,10 +8,6 @@
 # apt-get install xinput tlp
 ```
 ### Screen Orientation
-#### X11
-```
-└─$  xrandr -o right
-```
 #### fb
 ```
 └─# nano /etc/default/grub
@@ -26,15 +22,76 @@ GRUB_GFXMODE=1200x1920x32
 [SeatDefaults]
 display-setup-script=xrandr -o right
 ```
-#### TouchScreen & Stylus
+#### Stylus & X11
 ```
+└─$ xinput --list
+⎡ Virtual core pointer                          id=2    [master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
+⎜   ↳ HAILUCK CO.,LTD USB KEYBOARD Mouse        id=12   [slave  pointer  (2)]
+⎜   ↳ GXTP7380:00 27C6:0113                     id=16   [slave  pointer  (2)]
+⎜   ↳ GXTP7380:00 27C6:0113 Stylus Pen (0)      id=21   [slave  pointer  (2)]
+⎣ Virtual core keyboard                         id=3    [master keyboard (2)]
+    ↳ Virtual core XTEST keyboard               id=5    [slave  keyboard (3)]
+    ↳ Power Button                              id=6    [slave  keyboard (3)]
+    ↳ Video Bus                                 id=7    [slave  keyboard (3)]
+    ↳ Power Button                              id=8    [slave  keyboard (3)]
+    ↳ Sleep Button                              id=9    [slave  keyboard (3)]
+    ↳ SHUNCCM2MP: SHUNCCM2MP                    id=10   [slave  keyboard (3)]
+    ↳ HAILUCK CO.,LTD USB KEYBOARD              id=11   [slave  keyboard (3)]
+    ↳ HAILUCK CO.,LTD USB KEYBOARD System Control       id=13   [slave  keyboard (3)]
+    ↳ HAILUCK CO.,LTD USB KEYBOARD Consumer Control     id=14   [slave  keyboard (3)]
+    ↳ HAILUCK CO.,LTD USB KEYBOARD Wireless Radio Control       id=15   [slave  keyboard (3)]
+    ↳ GXTP7380:00 27C6:0113 Stylus              id=17   [slave  keyboard (3)]
+    ↳ GXTP7380:00 27C6:0113 Keyboard            id=18   [slave  keyboard (3)]
+    ↳ Intel HID events                          id=19   [slave  keyboard (3)]
+    ↳ Intel HID 5 button array                  id=20   [slave  keyboard (3)]
+└─$ xinput --list-props 21
+```
+```
+> 0°
+[  0  1  0 ]
+[ -1  0  1 ]
+[  0  0  1 ]
+└─$ xinput set-prop 'GXTP7380:00 27C6:0113 Stylus Pen (0)' 'Coordinate Transformation Matrix' 0 1 0 -1 0 1 0 0 1
+└─$ xrandr -o right
+
+> 90°
+[ -1  0  1 ]
+[  0 -1  1 ]
+[  0  0  1 ]
+└─$ xinput set-prop 'GXTP7380:00 27C6:0113 Stylus Pen (0)' 'Coordinate Transformation Matrix' -1 0 1 0 -1 1 0 0 1
+└─$ xrandr -o inverted
+
+> 180°
+[  0 -1  1 ]
+[  1  0  0 ]
+[  0  0  1 ]
+└─$ xinput set-prop 'GXTP7380:00 27C6:0113 Stylus Pen (0)' 'Coordinate Transformation Matrix' 0 -1 1 1 0 0 0 0 1
+└─$ xrandr -o left
+
+> 270°
+[  1  0  0 ]
+[  0  1  0 ]
+[  0  0  1 ]
+└─$ xinput set-prop 'GXTP7380:00 27C6:0113 Stylus Pen (0)' 'Coordinate Transformation Matrix'  1 0 0 0 1 0 0 0 1
+└─$ xrandr -o normal
+
 └─# nano /etc/X11/xorg.conf.d/99-touchsreen.conf
 Section "InputClass"
   Identifier    "calibration"
   MatchProduct  "GXTP7380"
   Option        "TransformationMatrix" "0 1 0 -1 0 1 0 0 1"
 EndSection
+
+> 0°   Option "TransformationMatrix" "0 1 0 -1 0 1 0 0 1"
+> 90°  Option "TransformationMatrix" "-1 0 1 0 -1 1 0 0 1"
+> 180° Option "TransformationMatrix" "0 -1 1 1 0 0 0 0 1"
+> 270° Option "TransformationMatrix" "1 0 0 0 1 0 0 0 1"
 ```
+#### TouchScreen
+```
+```
+
 ### Powersave tweeks
 ```
 └─# nano /etc/tlp.conf
