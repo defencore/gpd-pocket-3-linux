@@ -68,3 +68,7 @@ ffplay /dev/video3
 - https://www.reddit.com/r/GPDPocket/comments/s16p9v/gpd_pocket_3_and_ubuntu_20043_so_far/hs7sqyw/
 - https://liliputing.com/2021/11/running-linux-on-the-gpd-pocket-3-mini-laptop.html
 - https://wiki.archlinux.org/title/GPD_Pocket
+
+## Official
+- https://gpd.hk/gpdpocket3firmware
+  > 2022-01-13 The Pocket 3 glass touchpad upgrade program solves the phenomenon of the mouse jumping randomly when moving the mouse pointer with the touchpad. The Pocket 3 high-end and low-end models are common.
