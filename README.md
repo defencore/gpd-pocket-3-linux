@@ -28,7 +28,7 @@ display-setup-script=xrandr -o right
 ```
 #### TouchScreen & Stylus
 ```
-# nano /etc/xorg.conf.d/99-touchsreen.conf
+# nano /etc/X11/xorg.conf.d/99-touchsreen.conf
 Section "InputClass"
   Identifier    "calibration"
   MatchProduct  "GXTP7380"
