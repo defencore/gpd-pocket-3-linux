@@ -22,7 +22,7 @@ GRUB_GFXMODE=1200x1920x32
 [SeatDefaults]
 display-setup-script=xrandr -o right
 ```
-#### Stylus & X11
+#### Stylus & Touchscreen & X11
 ```
 └─$ xinput --list
 ⎡ Virtual core pointer                          id=2    [master pointer  (3)]
@@ -52,28 +52,32 @@ display-setup-script=xrandr -o right
 [  0  1  0 ]
 [ -1  0  1 ]
 [  0  0  1 ]
-└─$ xinput set-prop 'GXTP7380:00 27C6:0113 Stylus Pen (0)' 'Coordinate Transformation Matrix' 0 1 0 -1 0 1 0 0 1
+└─$ xinput set-prop '21' 'Coordinate Transformation Matrix' 0 1 0 -1 0 1 0 0 1
+└─$ xinput set-prop '16' 'Coordinate Transformation Matrix' 0 1 0 -1 0 1 0 0 1
 └─$ xrandr -o right
 
 > 90°
 [ -1  0  1 ]
 [  0 -1  1 ]
 [  0  0  1 ]
-└─$ xinput set-prop 'GXTP7380:00 27C6:0113 Stylus Pen (0)' 'Coordinate Transformation Matrix' -1 0 1 0 -1 1 0 0 1
+└─$ xinput set-prop '21' 'Coordinate Transformation Matrix' -1 0 1 0 -1 1 0 0 1
+└─$ xinput set-prop '16' 'Coordinate Transformation Matrix' -1 0 1 0 -1 1 0 0 1
 └─$ xrandr -o inverted
 
 > 180°
 [  0 -1  1 ]
 [  1  0  0 ]
 [  0  0  1 ]
-└─$ xinput set-prop 'GXTP7380:00 27C6:0113 Stylus Pen (0)' 'Coordinate Transformation Matrix' 0 -1 1 1 0 0 0 0 1
+└─$ xinput set-prop '21' 'Coordinate Transformation Matrix' 0 -1 1 1 0 0 0 0 1
+└─$ xinput set-prop '16' 'Coordinate Transformation Matrix' 0 -1 1 1 0 0 0 0 1
 └─$ xrandr -o left
 
 > 270°
 [  1  0  0 ]
 [  0  1  0 ]
 [  0  0  1 ]
-└─$ xinput set-prop 'GXTP7380:00 27C6:0113 Stylus Pen (0)' 'Coordinate Transformation Matrix'  1 0 0 0 1 0 0 0 1
+└─$ xinput set-prop '21' 'Coordinate Transformation Matrix'  1 0 0 0 1 0 0 0 1
+└─$ xinput set-prop '16' 'Coordinate Transformation Matrix'  1 0 0 0 1 0 0 0 1
 └─$ xrandr -o normal
 
 └─# nano /etc/X11/xorg.conf.d/99-touchsreen.conf
@@ -87,9 +91,6 @@ EndSection
 > 90°  Option "TransformationMatrix" "-1 0 1 0 -1 1 0 0 1"
 > 180° Option "TransformationMatrix" "0 -1 1 1 0 0 0 0 1"
 > 270° Option "TransformationMatrix" "1 0 0 0 1 0 0 0 1"
-```
-#### TouchScreen
-```
 ```
 
 ### Powersave tweeks
