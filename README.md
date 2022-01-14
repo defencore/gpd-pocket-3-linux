@@ -154,7 +154,18 @@ PCIE_ASPM_ON_BAT=powersupersave
 > will create secondary touchpad pointer with id=23
 └─$ xinput reattach 12 23
 ```
+### Accelerometer
+```
+└─$ watch -n 1 cat /sys/bus/iio/devices/iio:device0/in_accel_*_raw
+X-axis: 1011
+Y-axis: 2
+Z-axis: -157
 
+> 0°   X= [ 1 - 1000   ] Y= [ -500 - 500 ]
+> 90°  X= [ -500 - 500 ] Y= [ 1 - 1000   ]
+> 180° X= [ -1000 - 0  ] Y= [ -500 - 500 ]
+> 270° X= [ -500 - 500 ] Y= [ -1000 - 0  ] 
+```
 ## ToDo
 * SoundCard
 * GRUB Menu Orientation
@@ -166,6 +177,7 @@ PCIE_ASPM_ON_BAT=powersupersave
 - https://gpd.hk/gpdpocket3
 - https://www.reddit.com/r/GPDPocket/comments/s16p9v/gpd_pocket_3_and_ubuntu_20043_so_far/hsaos2r/
 - https://www.reddit.com/r/GPDPocket/comments/s16p9v/gpd_pocket_3_and_ubuntu_20043_so_far/hs7sqyw/
+- https://www.reddit.com/r/GPDPocket/comments/s31qi8/gpd_p3_no_sound_linux/
 - https://liliputing.com/2021/11/running-linux-on-the-gpd-pocket-3-mini-laptop.html
 - https://wiki.archlinux.org/title/GPD_Pocket
 
