@@ -181,6 +181,7 @@ Z-axis: -157
 - https://www.reddit.com/r/GPDPocket/comments/s31qi8/gpd_p3_no_sound_linux/
 - https://liliputing.com/2021/11/running-linux-on-the-gpd-pocket-3-mini-laptop.html
 - https://wiki.archlinux.org/title/GPD_Pocket
+- https://gist.github.com/tonitch/59b6fc10a2143cd35c54055dec0cb81b
 
 ## Official
 - https://gpd.hk/gpdpocket3firmware
