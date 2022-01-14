@@ -23,6 +23,13 @@ GRUB_GFXMODE=1200x1920x32
 display-setup-script=xrandr -o right
 ```
 #### Stylus & Touchscreen & X11
+##### Automatic Screen Rotation
+```
+└─$ wget https://raw.githubusercontent.com/defencore/gpd-pocket-3-linux/main/screen-auto-rotate.c
+└─$ gcc -O2 -o screen-auto-rotate screen-auto-rotate.c
+└─$ ./screen-auto-rotate
+```
+
 ```
 └─$ xinput --list
 ⎡ Virtual core pointer                          id=2    [master pointer  (3)]
@@ -171,7 +178,7 @@ Z-axis: -157
 * SoundCard
 * GRUB Menu Orientation
 * Stylus Buttons Remap
-* Automatic Screen Rotation
+
 * Hibernate / Suspend / Hybrid Sleep
 
 ## Links:
