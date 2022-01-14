@@ -81,7 +81,12 @@ PCIE_ASPM_ON_BAT=powersupersave
 ## ToDo
 * SoundCard
 * GRUB Menu Orientation
-* Stylus Buttons Remap
+* Stylus
+  * Fix wrong work
+  * Buttons Remap
+* Multi-Touch Gestures
+  * Scroll Up/Down
+  * Zoom Increase/Decrease
 * Hibernate / Suspend / Hybrid Sleep
 
 
