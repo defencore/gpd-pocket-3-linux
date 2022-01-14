@@ -54,7 +54,7 @@ display-setup-script=xrandr -o right
 [  0  0  1 ]
 └─$ xinput set-prop '21' 'Coordinate Transformation Matrix' 0 1 0 -1 0 1 0 0 1
 └─$ xinput set-prop '16' 'Coordinate Transformation Matrix' 0 1 0 -1 0 1 0 0 1
-└─$ xrandr -o right
+└─$ xrandr --output DSI-1 --rotate right
 
 > 90°
 [ -1  0  1 ]
@@ -62,7 +62,7 @@ display-setup-script=xrandr -o right
 [  0  0  1 ]
 └─$ xinput set-prop '21' 'Coordinate Transformation Matrix' -1 0 1 0 -1 1 0 0 1
 └─$ xinput set-prop '16' 'Coordinate Transformation Matrix' -1 0 1 0 -1 1 0 0 1
-└─$ xrandr -o inverted
+└─$ xrandr --output DSI-1 --rotate inverted
 
 > 180°
 [  0 -1  1 ]
@@ -70,7 +70,7 @@ display-setup-script=xrandr -o right
 [  0  0  1 ]
 └─$ xinput set-prop '21' 'Coordinate Transformation Matrix' 0 -1 1 1 0 0 0 0 1
 └─$ xinput set-prop '16' 'Coordinate Transformation Matrix' 0 -1 1 1 0 0 0 0 1
-└─$ xrandr -o left
+└─$ xrandr --output DSI-1 --rotate left
 
 > 270°
 [  1  0  0 ]
@@ -78,7 +78,7 @@ display-setup-script=xrandr -o right
 [  0  0  1 ]
 └─$ xinput set-prop '21' 'Coordinate Transformation Matrix'  1 0 0 0 1 0 0 0 1
 └─$ xinput set-prop '16' 'Coordinate Transformation Matrix'  1 0 0 0 1 0 0 0 1
-└─$ xrandr -o normal
+└─$ xrandr --output DSI-1 --rotate normal
 
 └─# nano /etc/X11/xorg.conf.d/99-touchsreen.conf
 Section "InputClass"
