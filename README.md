@@ -57,7 +57,17 @@ EndSection
            > Press: Super+R / Win+R
        > Close
 ```
+### Audio [not working on Kernel 5.15.0]
+```
 
+└─$ sudo nano /etc/modprobe.d/alsa.conf
+options snd-intel-dspcfg dsp_driver=1
+
+└─$ pulseaudio -k
+└─$ systemctl --user restart pulseaudio
+└─$ alsactl init
+> error
+```
 ### Powersave Tweaks
 ```
 └─# nano /etc/tlp.conf
