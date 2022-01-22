@@ -102,4 +102,22 @@ PCIE_ASPM_ON_BAT=powersupersave
 
 ## Official
 - https://gpd.hk/gpdpocket3firmware
-  > 2022-01-13 The Pocket 3 glass touchpad upgrade program solves the phenomenon of the mouse jumping randomly when moving the mouse pointer with the touchpad. The Pocket 3 high-end and low-end models are common.
+  ```
+  2022-01-13 The Pocket 3 glass touchpad upgrade program solves the phenomenon of the mouse jumping randomly when moving the mouse pointer with the touchpad. The Pocket 3 high-end and low-end models are common.
+  ```
+- https://ubuntu-mate.org/download/gpd_pocket_3/impish/
+  ```
+  2022-01-21 Configuration changes for the GPD Pocket 3 include:
+  1. Enable frame buffer and Xorg display rotation.
+  2. Accelerometer support for automatic screen rotation. Also automatically rotates touch screen and stylus (draw and erase)
+  3. Enable fractional scaling by default.
+  4. Results in an effective resolution of ~1280x800 to make the display panels easily readable.
+  5. Simple to toggle on/off via the Display Scaler app if you want to restore full resolution.
+  6. Enable audio via the HDaudio legacy driver.
+  7. Suspend is implemented via s2idle
+  8. A temporary workaround until S3 sleep state is supported via the kernel.
+  9. Enable scroll wheel emulation while holding down the centre trackpad button.
+  10. Enable Tear-Free rendering by default.
+  11. Enable double size console (tty) font resolution.
+  12. Sadly, no support for the fingerprint reader.
+  ```
