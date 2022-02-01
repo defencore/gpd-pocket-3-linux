@@ -111,6 +111,37 @@ Z-axis: -157
 > 180° X= [ -1000 - 0  ] Y= [ -500 - 500 ]
 > 270° X= [ -500 - 500 ] Y= [ -1000 - 0  ] 
 ```
+### Mouse remap
+```
+└─$ xinput                                                                                                                                                                                                                           130 ⨯
+⎡ Virtual core pointer                          id=2    [master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
+⎜   ↳ HAILUCK CO.,LTD USB KEYBOARD Mouse        id=12   [slave  pointer  (2)]
+⎜   ↳ GXTP7380:00 27C6:0113                     id=16   [slave  pointer  (2)]
+⎜   ↳ USB OPTICAL MOUSE                         id=21   [slave  pointer  (2)]
+⎣ Virtual core keyboard                         id=3    [master keyboard (2)]
+    ↳ Virtual core XTEST keyboard               id=5    [slave  keyboard (3)]
+    ↳ Power Button                              id=6    [slave  keyboard (3)]
+    ↳ Video Bus                                 id=7    [slave  keyboard (3)]
+    ↳ Power Button                              id=8    [slave  keyboard (3)]
+    ↳ Sleep Button                              id=9    [slave  keyboard (3)]
+    ↳ SHUNCCM2MP: SHUNCCM2MP                    id=10   [slave  keyboard (3)]
+    ↳ HAILUCK CO.,LTD USB KEYBOARD              id=11   [slave  keyboard (3)]
+    ↳ HAILUCK CO.,LTD USB KEYBOARD System Control       id=13   [slave  keyboard (3)]
+    ↳ HAILUCK CO.,LTD USB KEYBOARD Consumer Control     id=14   [slave  keyboard (3)]
+    ↳ HAILUCK CO.,LTD USB KEYBOARD Wireless Radio Control       id=15   [slave  keyboard (3)]
+    ↳ GXTP7380:00 27C6:0113 Stylus              id=17   [slave  keyboard (3)]
+    ↳ GXTP7380:00 27C6:0113 Keyboard            id=18   [slave  keyboard (3)]
+    ↳ Intel HID events                          id=19   [slave  keyboard (3)]
+    ↳ Intel HID 5 button array                  id=20   [slave  keyboard (3)]
+└─$ xinput get-button-map 21                                                                                                                                       1 3 2 4 5 6 7 8 9 
+└─$ xinput test 21
+button press   2
+button press   3
+└─$ xinput set-button-map 21 1 2 3 4 5 6 7
+
+```
+
 
 ## Links:
 - https://gpd.hk/gpdpocket3
